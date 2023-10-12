@@ -17,14 +17,12 @@ var correctAnswer = 0;
 var quizOver = false;
 
 
-scores = document.getElementById('scores');
-scores.textContent = 'View High Scores!';
-
-time = document.getElementById('time');
-
-
-quizContainer = document.getElementById('quiz');
-quizContainer.textContent = 'JavaScript Quiz!';
+var scores = document.getElementById('scores');
+var quizContainer = document.getElementById('quiz');
+var timeEl = document.getElementById('time');
+var questionTextEl = document.getElementById('question-txt');
+var choices = document.getElementById('question-choices');
+var startBtn = document.getElementById('start-btn');
 
 
 
@@ -33,6 +31,29 @@ quizContainer.textContent = 'JavaScript Quiz!';
 
 
 
+startBtn.addEventListener('click', function(){
+setTime();
+displayNextQuestion();
+})
+
+function setTime(){
+  var timeCounter = setInterval(function(){
+    timer--;
+    timeEl.textContent = timer;
+  }, 1000);
+}
+
+
+
+function displayNextQuestion(){
+questionTextEl.textContent = questions[currentQ].question;
+var currentQuestionChoices = questions[currentQ].choices;
+for (var i = 0; i < currentQuestionChoices.length; i++){
+  var choiceBtn = document.createElement('button');
+  choiceBtn.textContent = currentQuestionChoices[i];
+  choices.appendChild(choiceBtn);
+}
+}
 
 
 
@@ -49,6 +70,37 @@ quizContainer.textContent = 'JavaScript Quiz!';
 
 
 
+
+
+
+
+
+
+// timer that starts on btn click event listener for button id 
+
+// presented with question
+
+//when answered wrong time is subtracted from total time
+
+//when all questions are answered or timer runs out game ends
+
+// when game ends then i can save my score -local storage
+
+
+// highscores tab   time   and quiz on page at all times
+
+
+//function for timer
+
+
+//etc....
+
+
+//event listener for start btn
+
+
+
+//event listener for timer
 
 
 
@@ -81,35 +133,6 @@ quizContainer.textContent = 'JavaScript Quiz!';
 // var questionsDiv = document.getElementById('questions');
 // var olAnswers = document.getElementById('answer-buttons');
 // var btn1 = document.createElement('button');
-
-
-
-
-// timer that starts on btn click event listener for button id 
-
-// presented with question
-
-//when answered wrong time is subtracted from total time
-
-//when all questions are answered or timer runs out game ends
-
-// when game ends then i can save my score -local storage
-
-
-// highscores tab   time   and quiz on page at all times
-
-
-//function for timer
-
-
-//etc....
-
-
-//event listener for start btn
-
-
-
-//event listener for timer
 
 
 
