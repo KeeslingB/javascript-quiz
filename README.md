@@ -28,7 +28,7 @@ below is a screenshot of project at current state!
 Link to GitHub Project Page: https://github.com/KeeslingB/javascript-quiz
 
 
-link to Projects Deployed Page: 
+link to Projects Deployed Page: https://keeslingb.github.io/javascript-quiz/
 
 
 
