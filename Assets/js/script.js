@@ -5,6 +5,9 @@ var questionTextEl = document.getElementById('question-txt');
 var choices = document.getElementById('question-choices');
 var startBtn = document.getElementById('start-btn');
 
+
+
+
 const questions = [
   {
     question: 'Javascript is an _____ language?',
@@ -32,12 +35,12 @@ const questions = [
     answer: 'in',
   },
 ]
+
 var timer = 30;
 var currentQ = 0;
 var quizOver = false;
 var endScore = 0;
 var EndGame = false;
-
 
 
 function setTime() {
@@ -49,8 +52,6 @@ function setTime() {
     }
   }, 1000);
 }
-
-
 
 
 function displayNextQuestion() {
@@ -66,8 +67,6 @@ function displayNextQuestion() {
 }
 
 
-
-
 function checkAnswer(event) {
   var answer = document.getElementById('question-choices');
   answerChoice = questions[currentQ].answer;
@@ -77,12 +76,11 @@ function checkAnswer(event) {
   }
   if (userAnswer === answerChoice) {
     timer = timer + 15;
+    endScore ++;
   }
   currentQ++;
   displayNextQuestion();
 }
-
-
 
 
 
@@ -96,27 +94,10 @@ startBtn.addEventListener('click', function () {
 
 
 
-
-//when all questions are answered or timer runs out game ends
+// when all questions are answered or timer runs out game ends
 
 // when game ends then i can save my score -local storage
 
+// highscores tab   time   and quiz on page at all times    
 
-// highscores tab   time   and quiz on page at all times    -
-
-
-
-// var myArray = [1,2,3,'4',true];
-// console.log(myArray[2]);
-
-// var myObject = {
-//   color: 'blue',
-//   year: 2020,
-
-//  drive(){
-//     console.log('drive');
-//   }
-// }
-
-// console.log(myObject.year);
-// myObject.drive()
+// questions become undefined at end 
