@@ -4,6 +4,11 @@ var timeEl = document.getElementById('time');
 var questionTextEl = document.getElementById('question-txt');
 var choices = document.getElementById('question-choices');
 var startBtn = document.getElementById('start-btn');
+var timer = 30;
+var currentQ = 0;
+var quizOver = false;
+var endScore = 0;
+var EndGame = false;
 
 
 
@@ -36,11 +41,6 @@ const questions = [
   },
 ]
 
-var timer = 30;
-var currentQ = 0;
-var quizOver = false;
-var endScore = 0;
-var EndGame = false;
 
 
 function setTime() {
@@ -78,9 +78,6 @@ function checkAnswer(event) {
     timer = timer + 15;
     endScore ++;
   }
-  // if (timer == 0){
-  //   clearTimeout(timer);
-  // }
   currentQ++;
   displayNextQuestion();
 }
@@ -103,4 +100,4 @@ startBtn.addEventListener('click', function () {
 
 // highscores tab   time   and quiz on page at all times    
 
-// questions become undefined at end 
+// questions become undefined at end ?
