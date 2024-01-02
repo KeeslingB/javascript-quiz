@@ -78,6 +78,9 @@ function checkAnswer(event) {
     timer = timer + 15;
     endScore ++;
   }
+  // if (timer == 0){
+  //   clearTimeout(timer);
+  // }
   currentQ++;
   displayNextQuestion();
 }
